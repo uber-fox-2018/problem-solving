@@ -115,8 +115,7 @@ function jadwalFitnes(){
       // console.log('Tanggal '+ i + ':' + arr)
       result.push('Tanggal '+ i + ':' + arr)
     }
-    return result.join('\n')
-  
+    return result.join('\n') 
 }
 
 console.log(jadwalFitnes())
