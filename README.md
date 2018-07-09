@@ -9,15 +9,15 @@ SET tonoDays, antonDays, budiDays WITH 7
 FOR i TO 31
 	SET people_going WITH EMPTY ARRAY
 	IF i EQUALS tonoDays
-		PUSH "Tono" INTO people_going
+		PUSH " Tono" INTO people_going
 		ADD 2 INTO tonoDays
 	ENDIF
 	IF i EQUALS antonDays
-		PUSH "Anton" INTO people_going
+		PUSH " Anton" INTO people_going
 		ADD 4 INTO antonDays
 	ENDIF
 	IF i EQUALS budiDays
-		PUSH "Budi" INTO people_going
+		PUSH " Budi" INTO people_going
 		ADD 5 INTO budiDays
 	ENDIF
 
