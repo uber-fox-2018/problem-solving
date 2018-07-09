@@ -1,5 +1,5 @@
 /*
-PSUDOCODE :
+ALGORITMA :
 1. membuat function jadwal, dengan parameter tanggal
 2. menentukan variabel untuk digunakan, seperti :
     a. openingData = 7
@@ -16,6 +16,33 @@ PSUDOCODE :
         selesai if
     selesai looping
 selesai function
+
+PSUDOCODE :
+FUNCTION jadwal with PARAMETER tanggal
+    SET openigDate with value 7
+    SET date with value 31
+
+    FOR i LESS THAN from i EQUAL TO openingDate
+        SET result with value []
+
+        IF i mod 5 STRICT EQUAL TO 0
+        PRINT `tanggal ${i} : Tempat Fitnes Libur`
+        ELSE IF i STRICT EQUAL TO openingDate
+        PRINT `tanggal ${i} : Tono, Anton,Budi`
+            ELSE
+                IF i SUBSTRACT openingDate mod 2 STRICT EQUAL 0
+                result PUSH Tono
+                IF i SUBSTRACT openingDate mod 4 STRICT EQUAL 0
+                result PUSH Anton
+                IF i SUBSTRACT openingDate mod 5 STRICT EQUAL 0
+                result PUSH Budi
+
+                PRINT "tanggal i EQUAL result"
+            END IF
+    END FOR
+
+END FUNCTION
+
 */
 
 function jadwal(tanggal) {
