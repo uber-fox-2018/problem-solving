@@ -1,5 +1,29 @@
+//PSEUDOCODE
+// set function with name fitnessFor input opening, days, member
+//     set counter to 0
+
+//     for i until <= days
+//         set membersArr to []
+//         if i >= opening
+//             if i = opening
+//                 display "tanggal " + i + " : " + member join with ", "
+//             else if i % 5 = 
+//                 display "tanggal " + i + " : Tempat Fitness Tutup"
+//             else
+//                 for j until member.length
+//                     if counter % member[j][1] == 0
+//                         member[j][0] push to membersArr
+//                 display "tanggal " + i + " : " + member join with ", " 
+//                 j equals to j + 1
+//                 end for
+//             end if
+//         end if
+//     i equals to i + 1 
+//     end for  
+
+
 function fitnessFor(Opening, Days, member) {
-    let Members = ["Tono", "Anton", "Budi"];
+    
     let counter = 0;
 
     for (i = 0; i <= Days; i++) {
