@@ -1,33 +1,30 @@
+function goToFitness(peopleArr){
+	let startDate = 7
+	let listperson = {};
 
-function goToFitness(){
-	let tonoDays = 7;
-	let antonDays = 7;
-	let budiDays = 7;
+	for(let person of peopleArr){
+		listperson[person[0]] = {dateGotoGym: startDate, interval : person[1]}
+	}
+
 	
-	for(let i = 7; i <= 31 ; i++){
-		let people_going = [];
-		if(i === tonoDays){
-			people_going.push(" Tono");
-			tonoDays+=2;
-		}
 
-		if(i === antonDays){
-			people_going.push(" Anton");
-			antonDays+=4;
+	for(let i = startDate ; i <= 31 ; i++){
+		let output = "Tanggal "+i+":";
+		let peopleGoing = [];
+		for(let personName in listperson){
+			if(listperson[personName].dateGotoGym === i){
+				peopleGoing.push(" "+personName);
+				listperson[personName].dateGotoGym += listperson[personName].interval;
+			}
 		}
-
-		if(i === budiDays){
-			people_going.push(" Budi");
-			budiDays+=5;
-		}
-
 		if(!(i%5)){
-			console.log("Tanggal "+i+": Tempat Fitness Tutup");
+			output+=" Tempat Fitnes Tutup";
+		}else{
+			output+=peopleGoing.toString();
 		}
-		else{
-			console.log("Tanggal "+i+":"+people_going.toString());
-		}
+
+		console.log(output);
 	}
 }
 
-goToFitness();
+console.log(goToFitness([["Anton", 4], ["Tono", 2], ["Budi", 5], ["Eri", 2]]));
