@@ -30,54 +30,58 @@
 // END FOR
 
 // cara 1
-function scheduleFitness() {
+// function scheduleFitness() {
 
-    for (let i = 7; i < 32; i++) {
-        let fitnessPattern = []
-        if (i == 7) {
-            console.log(`Tanggal ${i}: Anton,Budi,Tono`)
-        } else if (i % 5 == 0) {
-            console.log(`Tanggal ${i}: Tempat Fitness Tutup`)
-        } else {
-            if ((i - 7) % 2 == 0) {
-                fitnessPattern.push('Tono')
-            } 
-            if ((i - 7) % 4 == 0) {
-                fitnessPattern.push('Anton')
-            }
-            if ((i-7) % 5 == 0) {
-                fitnessPattern.push('Budi')
-            }
-            console.log(`Tanggal ${i}: ${fitnessPattern}`)
-        } 
-    }
-}
+//     for (let i = 7; i < 32; i++) {
+//         let fitnessPattern = []
+//         if (i == 7) {
+//             console.log(`Tanggal ${i}: Anton,Budi,Tono`)
+//         } else if (i % 5 == 0) {
+//             console.log(`Tanggal ${i}: Tempat Fitness Tutup`)
+//         } else {
+//             if ((i - 7) % 2 == 0) {
+//                 fitnessPattern.push('Tono')
+//             } 
+//             if ((i - 7) % 4 == 0) {
+//                 fitnessPattern.push('Anton')
+//             }
+//             if ((i-7) % 5 == 0) {
+//                 fitnessPattern.push('Budi')
+//             }
+//             console.log(`Tanggal ${i}: ${fitnessPattern}`)
+//         } 
+//     }
+// }
 
 // cara 2
-function scheduleFitnes_1 () {
+function scheduleFitness(openingDate, memberFitness) {
 
     let count = 0
-    for (let i = 7; i <= 31; i++) {
+    for (let i = openingDate; i <= 31; i++) {
         let result = ''
-        if (i == 7) {
-            console.log(`Tanggal ${i}: Anton, Budi, Tono`)
+        if (i == openingDate) {
+            for (let j in memberFitness) {
+                result += `${memberFitness[j].name}, `
+            }  
         } else if (i % 5 == 0) {
-            console.log(`Tanggal ${i}: Tempat Fitness Tutup`)
+           result = `Tempat Fitness Tutup`
         } else {
-            if (count % 2 == 0) {
-                result += 'Tono '
+            for (let j in memberFitness) {
+                if (count % memberFitness[j].schedule == 0) {
+                    result += `${memberFitness[j].name}, `
+                }
             }
-            if (count % 4 == 0) {
-                result += 'Anton '
-            }
-            if (count % 5 == 0) {
-                result += 'Budi '
-            }
-            count++
-            console.log(`Tanggal ${i}: ${result}`)
         }
+        count++
+        console.log(`Tanggal ${i}: ${result}`)
     }
 }
 
-scheduleFitness()
+let memberFitness = [{ 
+    name: 'Tono', schedule: 2},{
+    name: 'Anton', schedule: 4},{
+    name: 'Budi', schedule: 5
+}]
+
+scheduleFitness(7, memberFitness)
 //scheduleFitnes_1()
